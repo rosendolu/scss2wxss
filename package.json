@@ -4,8 +4,8 @@
   "description": "scss2wxss",
   "main": "index.js",
   "scripts": {
-    "watch": " chokidar '**/*.scss' -c '' ",
-    "build": "node-sass -rw ./ -o ./",
+    "build2css": " chokidar '**/*.scss' -c '' ",
+    "build2wxss": "node buildwxss.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
