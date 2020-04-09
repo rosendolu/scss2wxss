@@ -1,0 +1,14 @@
+.body {
+  background-color: 0;
+}
+
+.body .main {
+  color: red;
+  font-size: 120px;
+  border: none;
+  font: 100;
+  border-radius: initial;
+  margin: 0;
+  display: block;
+  padding-left: 10px;
+}
