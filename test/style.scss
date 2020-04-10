@@ -1,11 +1,11 @@
 .body {
-  background-color: green($color: #000000);
+  background-color: red;
   .main {
     color: red;
-
     font-size: 120rpx;
 
     border: none;
+    border: 1px solid red;
 
     font: 100rpx;
     border-radius: initial;

@@ -1,11 +1,12 @@
 .body {
-  background-color: 0;
+  background-color: red;
 }
 
 .body .main {
   color: red;
   font-size: 120rpx;
   border: none;
+  border: 1px solid red;
   font: 100rpx;
   border-radius: initial;
   margin: 0;
