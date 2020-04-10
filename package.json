@@ -1,7 +1,7 @@
 {
-  "name": "scss2wxss",
+  "name": "scss-to-wxss",
   "version": "1.0.0",
-  "description": "scss2wxss",
+  "description": "use node-sass compiler scss to ccs file ,then write css file to .wxss file",
   "main": "index.js",
   "scripts": {
     "build": "node ./index.js",
