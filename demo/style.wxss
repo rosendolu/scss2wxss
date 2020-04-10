@@ -6,6 +6,7 @@
   color: red;
   font-size: 120rpx;
   border: none;
+  border-bottom: 1px solid blue;
   border: 1px solid red;
   font: 100rpx;
   border-radius: initial;

@@ -1,16 +1,29 @@
 ## scss2wxss
 
->  **前提假设：** 已经假设了 对应的wxss 文件和css文件内容上一致，对于不一致的，本方案不适合。
+> **前提假设：** 已经假设了 对应的 wxss 文件和 css 文件内容上一致，对于不一致的，本方案不适合。
 
-**提示：**笔者出发点在于想在微信小程序中使用scss中的嵌套，变量等功能。解决`BEM`规则下class 一长串的问题。
+### Getting started
 
-语法采用的是wxss的规则，请留意 [wxss语法规则](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html)。
+install
 
-实现原理： 调用node-sass 把sass 文件转为css文件，把css文件`直接`写入到对应目录中的wxss 文件中。因此不能保证完全正确。
+```sh
+npm i scss-to-wxss -D
+```
+
+watch && build
+
+```sh
+const wxss = require('scss-to-wxss');
+wxss.run();
+```
 
 ### dev
 
 ```shell
-npm i // 安装依赖
-node index.js // 监听文件夹变动并把 scss 转为 wxss
+npm i
+node index.js
 ```
+
+**提示:** 笔者出发点在于想在微信小程序中使用 scss 中的嵌套，变量等功能。解决 BEM 规则下 class 一长串的问题。语法采用的是 wxss 的规则，请留意 wxss 语法规则。
+
+**实现原理：** 调用 node-sass 把 sass 文件转为 css 文件，把 css 文件直接写入到对应目录中的 wxss 文件中。因此不能保证完全正确。
