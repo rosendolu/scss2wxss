@@ -8,8 +8,7 @@
     "url": "git+https://github.com/rosendolu/scss2wxss.git"
   },
   "scripts": {
-    "build": "node ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon ./demo/index.js"
   },
   "keywords": [
     "wxss",
@@ -18,6 +17,7 @@
   "author": "rosendlu",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^4.1.0",
     "chokidar": "^3.3.1",
     "node-sass": "^4.13.1"
   },

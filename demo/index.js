@@ -1,2 +1,2 @@
-const build = require('../index');
-build.run();
+const scss2wxss = require('../index');
+scss2wxss.build();

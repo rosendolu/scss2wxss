@@ -1,46 +1,52 @@
 const sass = require('node-sass');
 const chokidar = require('chokidar');
-const PATH = require('path');
+const nodePath = require('path');
 const fs = require('fs');
-const log = console.log.bind(console);
+const chalk = require('chalk');
+const log = console.log;
 
-module.exports.run = () =>
+function build() {
   chokidar
     .watch('.', {
-      ignored: /(node_modules)/, // ignore node_modules
+      ignored: /(node_modules)/ // ignore node_modules
     })
     .on('all', (event, path) => {
       if (/.scss$/.test(path)) {
-        log(`====> `, event, path);
-        log(`path.resovle`, PATH.resolve(__dirname, path));
+        log(chalk.bold(event), chalk.green(path));
+        log(
+          chalk.bold('path'),
+          chalk.yellow(nodePath.resolve(__dirname, path))
+        );
         sass.render(
           {
-            file: PATH.resolve(__dirname, path),
+            file: nodePath.resolve(__dirname, path),
             // includePaths: ['lib/', 'mod/'],
-            outputStyle: 'expanded',
-            outFile: PATH.resolve(
-              __dirname,
-              `${path.match(/^[\w|-|/]+/)[0]}.wxss`,
-            ),
+            outputStyle: 'expanded'
+            // outFile: nodePath.resolve(
+            //   __dirname,
+            //  `${entry.replace(/\.scss/, '.wxss')}`
+            // )
           },
           function (error, result) {
             if (error) {
-              log(error);
+              log(chalk.red(error));
             } else {
-              log(`=====> result `, result);
               const { entry = '' } = result.stats || {};
-              log(result.css.toString());
+              // log(result.css.toString());
+              log(entry);
               fs.writeFile(
-                `${entry.match(/^[\w|-|/]+/)[0]}.wxss`,
+                `${entry.replace(/\.scss/, '.wxss')}`,
                 result.css,
                 function (err) {
-                  if (!err) {
-                    log(err);
+                  if (err) {
+                    log(chalk.red(err));
                   }
-                },
+                }
               );
             }
-          },
+          }
         );
       }
     });
+}
+module.exports = { build };
