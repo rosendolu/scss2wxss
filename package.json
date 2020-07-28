@@ -1,6 +1,6 @@
 {
   "name": "scss-to-wxss",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "use node-sass compiler scss to ccs file ,then write css file to .wxss file",
   "main": "index.js",
   "repository": {
